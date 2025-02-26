@@ -14,3 +14,7 @@ class Cat(models.Model):
     def get_absolute_url(self):
         return reverse("cat-detail", kwargs={"cat_id": self.id})
     
+class Feeding(models.Model):
+    date = models.DataField()
+    meal = models.CharField(max_length=1)
+    
