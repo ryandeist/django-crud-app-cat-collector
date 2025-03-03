@@ -14,4 +14,5 @@ urlpatterns = [
         views.add_feeding,
         name='add-feeding'
     ),
+    path('toys/create/', views.ToyCreate.as_view(), name='toy-create'),
 ]
