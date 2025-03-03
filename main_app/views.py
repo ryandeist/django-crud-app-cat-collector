@@ -17,9 +17,10 @@ def cat_index(request):
 
 def cat_detail(request, cat_id):
     cat = Cat.objects.get(id=cat_id)
+    toys= Toy.objects.all()
     feeding_form = FeedingForm()
     return render(request, 'cats/detail.html', {
-        'cat': cat, 'feeding_form': feeding_form    
+        'cat': cat, 'feeding_form': feeding_form, 'toys': toys
     })
 
 def add_feeding(request, cat_id):
