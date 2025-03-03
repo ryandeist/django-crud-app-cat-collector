@@ -86,7 +86,7 @@
                 <div class="toy-container">
                     <div class="color-block" style="background-color: {{ toy.color }}"></div>
                     <p>{{ toy.color }} {{ toy.name }}</p>
-                    <form action="" method="post">
+                    <form action="{% url 'associate-toy' cat.id toy.id %}" method="post">
                         {% csrf_token %}
                         <button type="submit" class="btn submit">Give Toy</button>
                     </form>
