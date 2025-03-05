@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" type="image/png" href="{% static 'images/splash.svg' %}" />
-        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}?t=randomNum"" />
         <title>Cat Collector</title>
         {% block head %} 
         {% endblock %}
@@ -27,6 +27,12 @@
                         <li><a href="{% url 'cat-create' %}">Add a Cat</a></li>
                         <li><a href="{% url 'toy-create' %}">Add a Toy</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
+                        <li>
+                            <form class="logout-form" method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit">Log Out</button>
+                            </form>
+                        </li>
                     {% else %}
                         <li><a href="{% url 'about' %}">About</a></li>
                         <li><a href="{% url 'home' %}">Login</a></li>
